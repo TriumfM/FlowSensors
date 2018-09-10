@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:background="@color/colorPrimaryDark">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="75dp"
+            android:id="@+id/logoImageView"
+        />
+
+        <TextView
+            android:id="@+id/loginName"
+            android:text="Flow Water"
+            style="@style/textView_style"
+            android:textSize="25dp"/>
+
+        <EditText
+            android:id="@+id/login_email"
+            android:inputType="textPersonName"
+            android:hint="Email"
+            style="@style/aeditText_style" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:inputType="textPassword"
+            android:hint="Password"
+            style="@style/aeditText_style" />
+
+        <Button
+            android:id="@+id/login_btn"
+            android:text="Log in"
+            style="@style/button_style" />
+
+
+        <TextView
+            android:id="@+id/login_log"
+            android:textColor="@color/colorError"
+            style="@style/textView_style"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/create_new_user"
+            android:text="Create new account"
+            android:textColor="#fff"
+
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:paddingRight="16dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

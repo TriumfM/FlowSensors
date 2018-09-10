@@ -1,0 +1,55 @@
+CREATE DATABASE Water_Flow_Sensor;
+
+use Water_Flow_Sensor;
+
+CREATE TABLE sen_sensors (
+    sid int not null AUTO_INCREMENT,
+    name varchar(255),
+    type varchar(255),
+    diameter varchar(255),
+    description varchar(255),
+    PRIMARY KEY(sid)
+);
+
+CREATE TABLE sen_pins (
+    pid int not null AUTO_INCREMENT,
+    sid int,
+    input int,
+    output int,
+    status int,
+
+    PRIMARY KEY(pid),
+    FOREIGN KEY(sid) REFERENCES sen_sensors(sid)
+)
+
+CREATE TABLE sen_data (
+    did int not null AUTO_INCREMENT,
+    sid int,
+    literMin double,
+    total double,
+    dataTime datetime, 
+    
+    PRIMARY KEY(did),
+    FOREIGN KEY(sid) REFERENCES sen_sensors(sid)
+);
+
+CREATE TABLE usr_users (
+    uid int not null AUTO_INCREMENT,
+    first_name varchar(255),
+    last_name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    
+    PRIMARY KEY(uid)
+);
+
+CREATE TABLE usr_accesses (
+    aid int not null AUTO_INCREMENT,
+    uid int not null,
+    sid int not null,
+    
+    PRIMARY KEY(aid),
+    FOREIGN KEY(uid) REFERENCES usr_users(uid),
+    FOREIGN KEY(sid) REFERENCES sen_sensors(sid)
+);
+
